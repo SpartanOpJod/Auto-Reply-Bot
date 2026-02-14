@@ -79,7 +79,7 @@ Sends it automatically
 
 🧪 Setup Instructions
 Step 1: Clone the Repository
-git clone https://github.com/your-username/auto-reply-bot.git
+git clone =https://github.com/SpartanOpJod/Auto-Reply-Bot
 cd auto-reply-bot
 
 Step 2: Install Dependencies
