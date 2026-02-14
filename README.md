@@ -1,202 +1,194 @@
-🤖 Auto Reply Bot (WhatsApp Web Automation)
+<div align="center">
 
-An AI-powered auto-reply bot that reads chat messages from WhatsApp Web and generates contextual replies using OpenAI.
+# 🤖 Auto Reply Bot  
+### AI-Powered WhatsApp Web Automation
 
-This bot:
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![OpenAI](https://img.shields.io/badge/OpenAI-GPT-green)
+![Automation](https://img.shields.io/badge/Automation-pyautogui-orange)
+![Status](https://img.shields.io/badge/Project-Experimental-red)
 
-📖 Reads chat messages directly from the screen
+An intelligent auto-reply bot that reads WhatsApp Web chats  
+and responds automatically using OpenAI.
 
-🧠 Analyzes conversation history using GPT
+</div>
 
-💬 Replies automatically in a defined personality
+---
 
-⚡ Runs in real time
+## ✨ Overview
 
-🚀 Features
+**Auto Reply Bot** is a Python automation tool that:
 
-Automated chat reading using pyautogui
+- 📖 Reads live chat messages from WhatsApp Web  
+- 🧠 Analyzes conversation context using GPT  
+- 💬 Generates dynamic AI responses  
+- ⚡ Sends replies automatically  
 
-Clipboard-based message extraction with pyperclip
+It blends **screen automation + prompt engineering + API integration** into one clean pipeline.
 
-AI-generated contextual responses via OpenAI API
+---
 
-Customizable personality (Hindi + English coder roast mode 😏)
+## 🧠 How It Works
 
-Fully automated message sending
+```
+WhatsApp Web  →  Screen Selection  →  Clipboard Copy  
+       ↓
+   Chat History Extraction
+       ↓
+  OpenAI API (Context + Personality)
+       ↓
+   Generated Response
+       ↓
+   Auto Paste + Send
+```
 
-🛠️ Tech Stack
+The bot continuously checks for new messages and replies only when required.
 
-Python 3.x
+---
 
-pyautogui
+## 📂 Project Structure
 
-pyperclip
-
-openai
-
-WhatsApp Web (Chrome)
-
-📂 Project Structure
+```bash
 auto-reply-bot/
 │
-├── bot.py          # Main automation script
-├── openai.py       # OpenAI response testing script
-├── get_cursor.py   # Utility to get screen coordinates
+├── bot.py          # Main automation logic
+├── openai.py       # OpenAI response testing
+├── get_cursor.py   # Utility for finding screen coordinates
 └── README.md
+```
 
-⚙️ How It Works
-1️⃣ Screen Automation
+---
 
-The bot:
+## 🛠️ Tech Stack
 
-Clicks on Chrome
+- **Python 3.x**
+- `pyautogui` – Screen automation
+- `pyperclip` – Clipboard management
+- `openai` – AI response generation
+- WhatsApp Web (Chrome)
 
-Selects chat area
+---
 
-Copies entire conversation
+## ⚙️ Setup
 
-Checks if the last message is from a specific sender
+### 1️⃣ Clone Repository
 
-2️⃣ AI Processing
-
-The conversation history is sent to GPT with:
-
-A defined personality
-
-Response constraints
-
-Context-aware instructions
-
-3️⃣ Auto Reply
-
-If the last message matches the target sender:
-
-The AI generates a response
-
-The bot pastes it into chat
-
-Sends it automatically
-
-🧪 Setup Instructions
-Step 1: Clone the Repository
-git clone =https://github.com/SpartanOpJod/Auto-Reply-Bot
+```bash
+git clone https://github.com/SpartanOpJod/Auto-Reply-Bot
 cd auto-reply-bot
+```
 
-Step 2: Install Dependencies
+### 2️⃣ Install Dependencies
+
+```bash
 pip install pyautogui pyperclip openai
+```
 
-Step 3: Add Your OpenAI API Key
+### 3️⃣ Add Your OpenAI API Key
 
-Replace this in both bot.py and openai.py:
+Replace this inside `bot.py` and `openai.py`:
 
-api_key="<Your Key Here>"
+```python
+client = OpenAI(
+    api_key="YOUR_API_KEY_HERE",
+)
+```
 
+⚠️ Never commit your API key.
 
-⚠️ Never push your API key to GitHub.
+---
 
-🖱️ Configure Screen Coordinates
+## 🖱️ Configure Screen Coordinates
 
-Every screen resolution is different.
-
-Use:
-
-python get_cursor.py
-
-
-Move your mouse over:
-
-Chrome icon
-
-Chat selection area
-
-Message input box
-
-Update coordinates inside bot.py.
-
-▶️ Running the Bot
-
-Open WhatsApp Web in Chrome
-
-Open the target chat
+Every system has different screen resolution.
 
 Run:
 
+```bash
+python get_cursor.py
+```
+
+Hover your mouse over:
+- Chrome icon
+- Chat selection area
+- Message input box
+
+Update the coordinates inside `bot.py`.
+
+---
+
+## ▶️ Running the Bot
+
+1. Open WhatsApp Web in Chrome  
+2. Open the target chat  
+3. Run:
+
+```bash
 python bot.py
+```
 
+The bot:
+- Checks every 5 seconds
+- Detects new messages
+- Generates AI reply
+- Sends automatically
 
-The bot will:
+---
 
-Check every 5 seconds
+## 🎭 Custom Personality
 
-Detect new messages
+Inside `bot.py`:
 
-Reply automatically
+```python
+{"role": "system", "content": "You are Naruto... roast people in a funny way"}
+```
 
-🧠 Customizing Personality
+Modify this to create:
+- Professional assistant
+- Motivational friend
+- Sarcastic AI
+- Study partner
+- Meme generator
 
-Inside bot.py:
+This is where prompt engineering shines.
 
-{"role": "system", "content": "You are a person named Naruto... roast people in a funny way"}
+---
 
+## ⚠️ Limitations
 
-Change this prompt to:
+- Depends on screen coordinates
+- Breaks if UI layout changes
+- Not using official WhatsApp API
+- Requires visible browser window
 
-Professional assistant
+---
 
-Flirty friend
+## 🚀 Future Improvements
 
-Motivational coach
+- Replace screen automation with WhatsApp Business API  
+- Add GUI configuration panel  
+- Add smarter message detection  
+- Convert into background service  
+- Docker support  
 
-Savage roast king
+---
 
-Study buddy
+## 🎯 Why This Project Matters
 
-Literally anything.
+This project demonstrates:
 
-⚠️ Important Notes
+- API integration
+- Prompt engineering
+- System automation
+- Real-world AI usage
+- End-to-end workflow design
 
-This bot relies on screen coordinates (not official WhatsApp API)
+It’s more than a script — it’s an automation system.
 
-Works only when:
+---
 
-Browser window is visible
+<div align="center">
 
-Screen resolution matches configured coordinates
+### ⭐ If you like this project, consider starring it!
 
-Do NOT use for spam
-
-Educational purposes only
-
-📌 Limitations
-
-Breaks if UI layout changes
-
-Hardcoded sender detection
-
-Depends on exact chat format
-
-Not optimized for background execution
-
-🔮 Future Improvements
-
-Use WhatsApp Business API instead of screen automation
-
-Add GUI for configuration
-
-Add message filtering logic
-
-Dockerize the project
-
-Deploy as a background service
-
-🎯 Why This Project Is Cool
-
-Combines automation + AI
-
-Shows real-world API integration
-
-Demonstrates prompt engineering
-
-Practical use of system-level automation
-
-This is not just a script — it’s a proper automation pipeline.
+</div>
